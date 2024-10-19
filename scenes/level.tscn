@@ -1,7 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://blx1wer0qdq63"]
+[gd_scene load_steps=15 format=3 uid="uid://blx1wer0qdq63"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6w5ip"]
 [ext_resource type="Texture2D" uid="uid://savi8wf0l2pj" path="res://icon.svg" id="2_p10t0"]
+[ext_resource type="Texture2D" uid="uid://ksps7rkett7t" path="res://assets/ui/pong_icon.png" id="2_udo4n"]
+[ext_resource type="Texture2D" uid="uid://diw3bm7ny0ak4" path="res://assets/ui/information_pop_up.png" id="3_6263y"]
+[ext_resource type="Texture2D" uid="uid://dekwact8t18eo" path="res://assets/ui/progress_bar.png" id="3_gtoix"]
+[ext_resource type="Texture2D" uid="uid://bf562pptb543n" path="res://assets/ui/space_invaders_icon.png" id="4_6tck1"]
+[ext_resource type="Texture2D" uid="uid://bh26l4o1or638" path="res://assets/ui/menu_icon.png" id="6_nbc86"]
+[ext_resource type="Texture2D" uid="uid://cvp2gs0uxcp8" path="res://assets/ui/pop_up_icon.png" id="6_vqxng"]
+[ext_resource type="FontFile" uid="uid://vo6yjq41sb8o" path="res://assets/fonts/Minecraft.ttf" id="7_45g0p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hf00"]
+atlas = ExtResource("3_6263y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cxxou"]
+texture = ExtResource("3_gtoix")
+region_rect = Rect2(0, 0, 64, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vw6tb"]
+texture = ExtResource("3_gtoix")
+region_rect = Rect2(64, 0, 64, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4kwd"]
+atlas = ExtResource("6_nbc86")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8mam"]
+atlas = ExtResource("6_nbc86")
+region = Rect2(32, 0, 32, 32)
 
 [node name="Livello" type="Control"]
 process_mode = 3
@@ -33,12 +60,15 @@ metadata/_edit_use_anchors_ = true
 [node name="Livello Corrente" type="TextureButton" parent="UI/Livello"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_udo4n")
+stretch_mode = 5
 
-[node name="Texture" type="TextureRect" parent="UI/Livello/Livello Corrente"]
+[node name="InfoTexture" type="TextureRect" parent="UI/Livello/Livello Corrente"]
 layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
-texture = ExtResource("2_p10t0")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_1hf00")
 
 [node name="Avanzamento" type="VBoxContainer" parent="UI/Livello"]
 layout_mode = 2
@@ -47,18 +77,16 @@ alignment = 1
 [node name="Barra Avanzamento" type="ProgressBar" parent="UI/Livello/Avanzamento"]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_cxxou")
+theme_override_styles/fill = SubResource("StyleBoxTexture_vw6tb")
 value = 40.0
 show_percentage = false
 
 [node name="Livello Successivo" type="TextureButton" parent="UI/Livello"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-
-[node name="Texture" type="TextureRect" parent="UI/Livello/Livello Successivo"]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
-texture = ExtResource("2_p10t0")
+texture_normal = ExtResource("4_6tck1")
+stretch_mode = 5
 
 [node name="Tutorial" type="TextureRect" parent="UI"]
 visible = false
@@ -74,7 +102,7 @@ offset_right = 800.0
 offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_p10t0")
+texture = ExtResource("6_vqxng")
 
 [node name="Testi" type="VBoxContainer" parent="UI/Tutorial"]
 layout_mode = 1
@@ -83,45 +111,65 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = -769.0
+offset_top = -270.0
+offset_right = 770.0
+offset_bottom = 420.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Categoria" type="Label" parent="UI/Tutorial/Testi"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992188, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("7_45g0p")
+theme_override_font_sizes/font_size = 50
+text = "Categoria"
+horizontal_alignment = 1
 
 [node name="Titolo" type="Label" parent="UI/Tutorial/Testi"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("7_45g0p")
+theme_override_font_sizes/font_size = 150
 text = "Titolo"
-horizontal_alignment = 1
-
-[node name="Cateogia" type="Label" parent="UI/Tutorial/Testi"]
-layout_mode = 2
-text = "Categoria"
 horizontal_alignment = 1
 
 [node name="Istruzioni" type="HBoxContainer" parent="UI/Tutorial/Testi"]
 layout_mode = 2
+theme_override_constants/separation = 450
+alignment = 1
 
 [node name="Descrizione" type="RichTextLabel" parent="UI/Tutorial/Testi/Istruzioni"]
 custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
-text = "Descrizione"
-fit_content = true
+theme_override_fonts/normal_font = ExtResource("7_45g0p")
+theme_override_font_sizes/normal_font_size = 30
+text = "ojnsanosdosdibi hc sdcbisdb s sdbcijsd c sdc ds c dscsb ijsn sdj sdcjdcjd cj djc s cjndonddvdvdvdvdv"
 
 [node name="Comandi" type="TextureRect" parent="UI/Tutorial/Testi/Istruzioni"]
-custom_minimum_size = Vector2(600, 600)
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 texture = ExtResource("2_p10t0")
+expand_mode = 1
 
 [node name="Esci" type="TextureButton" parent="UI"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
-offset_bottom = 128.0
-
-[node name="Icona Esci" type="TextureRect" parent="UI/Esci"]
-layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 148.0
 offset_bottom = 148.0
-texture = ExtResource("2_p10t0")
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_y4kwd")
+texture_hover = SubResource("AtlasTexture_o8mam")
+stretch_mode = 5

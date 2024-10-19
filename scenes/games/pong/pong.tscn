@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbxx0parj2dri"]
+[gd_scene load_steps=17 format=3 uid="uid://dbxx0parj2dri"]
 
 [ext_resource type="Script" path="res://scripts/games/pong/player.gd" id="1_74sm3"]
 [ext_resource type="Script" path="res://scripts/games/pong/pong.gd" id="1_npehp"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bj1dxjfjygk3n" path="res://assets/games/pong/ball.png" id="5_sq606"]
 [ext_resource type="PackedScene" uid="uid://blx1wer0qdq63" path="res://scenes/level.tscn" id="6_ay1a1"]
 [ext_resource type="PackedScene" uid="uid://bcuxuuexfskf8" path="res://scenes/games/space_invaders/space_invaders.tscn" id="7_3ag2u"]
+[ext_resource type="Texture2D" uid="uid://ksps7rkett7t" path="res://assets/ui/pong_icon.png" id="9_b7alb"]
 [ext_resource type="FontFile" uid="uid://vo6yjq41sb8o" path="res://assets/fonts/Minecraft.ttf" id="9_olaiq"]
+[ext_resource type="Texture2D" uid="uid://bf562pptb543n" path="res://assets/ui/space_invaders_icon.png" id="9_yjqy7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynayx"]
 size = Vector2(18, 122)
@@ -101,6 +103,11 @@ shape = SubResource("RectangleShape2D_uj5yo")
 
 [node name="Livello" parent="." instance=ExtResource("6_ay1a1")]
 prossimo_livello = ExtResource("7_3ag2u")
+livello_corrente = ExtResource("9_b7alb")
+prossimo_livello_icone = Array[Texture]([ExtResource("9_yjqy7")])
+categoria = "Casual"
+titolo = "Pong"
+descrizione = "Lo scopo del gioco è segnare più punti del tuo avversario colpendo la palla oltre la sua racchetta."
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

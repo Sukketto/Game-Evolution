@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ho8bfdm5ijwg"]
+[gd_scene load_steps=12 format=3 uid="uid://ho8bfdm5ijwg"]
 
 [ext_resource type="Script" path="res://scripts/games/labyrinth/labyrinth.gd" id="1_rqyr8"]
 [ext_resource type="MeshLibrary" uid="uid://b5uvl3ia00jqj" path="res://scenes/games/labyrinth/mesh_library.meshlib" id="2_lcaqu"]
+[ext_resource type="PackedScene" uid="uid://blx1wer0qdq63" path="res://scenes/level.tscn" id="3_0emwm"]
+[ext_resource type="Texture2D" uid="uid://brqalcvuwwyjd" path="res://assets/ui/labyrinth_icon.png" id="4_nlf4j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wlowh"]
 sky_top_color = Color(0.196078, 0.803922, 1, 1)
@@ -79,5 +81,13 @@ mesh = SubResource("SphereMesh_ktau7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
 shape = SubResource("SphereShape3D_fxa43")
+
+[node name="Livello" parent="." instance=ExtResource("3_0emwm")]
+prossimo_livello = null
+livello_corrente = ExtResource("4_nlf4j")
+prossimo_livello_icone = Array[Texture2D]([ExtResource("4_nlf4j")])
+categoria = "Puzzle"
+titolo = "Labyrinth"
+descrizione = "Completare il labirinto"
 
 [connection signal="body_entered" from="FallingArea" to="." method="_on_falling_area_body_entered"]

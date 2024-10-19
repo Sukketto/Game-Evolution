@@ -35,12 +35,21 @@ class_name Livello extends Node
 @export var avanzamento: int = 0
 @export var avanzamento_max: int = 100
 @export var menu = "res://menu.tscn"
-@export var prossimo_livello_icone: Array[Texture] = [load("res://missing.png")]
+@export var livello_corrente: Texture2D
+@export var prossimo_livello_icone: Array[Texture2D] = [load("res://missing.png")]
+@export var categoria: String
+@export var titolo: String
+@export var descrizione: String
+@export var comandi: Texture2D
 # Elementi grafici
 @onready var tutorial_ui: Control = $UI/Tutorial
 @onready var livello_corrente_ui: Control = $"UI/Livello/Livello Corrente"
 @onready var livello_successivo_ui: Control = $"UI/Livello/Livello Successivo"
-@onready var livello_successivo_texture: TextureRect = $"UI/Livello/Livello Successivo/Texture"
+@onready var categoria_label: Label = $UI/Tutorial/Testi/Categoria
+@onready var titolo_label: Label = $UI/Tutorial/Testi/Titolo
+@onready var descrizione_label: RichTextLabel = $UI/Tutorial/Testi/Istruzioni/Descrizione
+@onready var comandi_texture: TextureRect = $UI/Tutorial/Testi/Istruzioni/Comandi
+
 
 @onready var avanzamento_ui: ProgressBar = $"UI/Livello/Avanzamento/Barra Avanzamento"
 @onready var menu_ui: Control = $UI/Esci
@@ -48,9 +57,14 @@ class_name Livello extends Node
 # Metodi
 func _ready() -> void:
 	# Inizializza il livello
-	livello_successivo_texture.texture = prossimo_livello_icone[0]
+	livello_corrente_ui.texture_normal = livello_corrente
+	livello_successivo_ui.texture_normal = prossimo_livello_icone[0]
 	avanzamento_ui.max_value = avanzamento_max
 	avanzamento_ui.value = avanzamento
+	categoria_label.text = categoria
+	titolo_label.text = titolo
+	descrizione_label.text = descrizione
+	comandi_texture.texture = comandi
 
 	# Connette i segnali
 	tutorial_ui.connect("gui_input", on_tutorial_clicked)
@@ -80,13 +94,13 @@ func avanza(punti: int) -> void:
 	avanzamento_ui.value = avanzamento
 	if avanzamento >= avanzamento_max:
 		emit_signal("avanzamento_finito")
-
+	
 	# Avanza con le texture dell'icona del prossimo livello
 	if prossimo_livello_icone.size() > 0:
 		var percentuale = float(min(max(0,avanzamento),avanzamento_max)) / avanzamento_max
 		var indice = min(max(0,int(percentuale * prossimo_livello_icone.size())),prossimo_livello_icone.size()-1)
-		livello_successivo_texture.texture = prossimo_livello_icone[indice]
-
+		livello_successivo_ui.texture_normal = prossimo_livello_icone[indice]
+	
 	# TODO: animazione e scritta dei punti guadagnati
 	
 func prossimo() -> void:
@@ -146,4 +160,3 @@ signal icona_pressed()
 signal prossimo_livello_icona_pressed()
 signal tutorial_icona_pressed()
 signal avanzamento_finito()
-	

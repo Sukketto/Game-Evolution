@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://cjpeyp3khxu7e"]
+[gd_scene load_steps=99 format=4 uid="uid://cjpeyp3khxu7e"]
 
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/ladder.gd" id="1_4m6y1"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/player.gd" id="1_mvbo8"]
@@ -15,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://ye3sdyb2vndb" path="res://assets/games/donkey_kong/next_level_player.png" id="12_2cqcb"]
 [ext_resource type="Texture2D" uid="uid://cux6h6j07yg0s" path="res://assets/games/donkey_kong/next_level_door_dk.png" id="13_g2c0v"]
 [ext_resource type="PackedScene" uid="uid://gjd0kfm16f7g" path="res://scenes/games/donkey_kong/enemy.tscn" id="15_g2yj5"]
+[ext_resource type="PackedScene" uid="uid://blx1wer0qdq63" path="res://scenes/level.tscn" id="16_keyua"]
+[ext_resource type="PackedScene" uid="uid://ho8bfdm5ijwg" path="res://scenes/games/labyrinth/labyrinth.tscn" id="17_0op1e"]
+[ext_resource type="Texture2D" uid="uid://cj4wawappgrul" path="res://assets/ui/dk_icon.png" id="18_2lrbj"]
+[ext_resource type="Texture2D" uid="uid://brqalcvuwwyjd" path="res://assets/ui/labyrinth_icon.png" id="19_3y6ag"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qncrc"]
 texture = ExtResource("2_666as")
@@ -722,7 +726,7 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2asjd")
 
 [node name="BarrelsSpawner" type="Node2D" parent="."]
-position = Vector2(226, 129)
+position = Vector2(293, 140)
 script = ExtResource("3_tyibj")
 
 [node name="SpawnTimer" type="Timer" parent="BarrelsSpawner"]
@@ -736,7 +740,8 @@ position = Vector2(145, 731)
 position = Vector2(196, 381)
 
 [node name="Boss" type="AnimatedSprite2D" parent="."]
-position = Vector2(81, 167)
+z_index = 1
+position = Vector2(125, 170)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_xbyny")
 autoplay = "default"
@@ -780,6 +785,14 @@ shape = SubResource("RectangleShape2D_4e5hh")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
 position = Vector2(1920, 467)
 shape = SubResource("RectangleShape2D_4e5hh")
+
+[node name="Livello" parent="." instance=ExtResource("16_keyua")]
+prossimo_livello = ExtResource("17_0op1e")
+livello_corrente = ExtResource("18_2lrbj")
+prossimo_livello_icone = Array[Texture2D]([ExtResource("19_3y6ag")])
+categoria = "Platform"
+titolo = "Donkey Kong"
+descrizione = "Il tuo obiettivo è prendere il teletrasporto, difeso dall’alieno in cima alle piattaforme."
 
 [connection signal="area_entered" from="Map/Ladder" to="Map/Ladder" method="_on_area_entered"]
 [connection signal="area_exited" from="Map/Ladder" to="Map/Ladder" method="_on_area_exited"]
