@@ -135,3 +135,4 @@ vertical_alignment = 1
 [connection signal="body_entered" from="Player/HitArea" to="Enemy" method="_on_hit_area_body_entered"]
 [connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]
 [connection signal="body_entered" from="EnemyArea" to="." method="_on_enemy_area_body_entered"]
+[connection signal="avanzamento_finito" from="Livello" to="." method="_on_livello_avanzamento_finito"]

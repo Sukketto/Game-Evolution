@@ -65,13 +65,14 @@ func show_tutorial() -> void:
 	# Mostra il tutorial del livello
 	# TODO: Animazione di apertura: tutorial_element si espande dalla posizione dell'icona_element fino a coprire tutto lo schermo
 	tutorial_ui.show()
+	get_tree().paused = true
 
 func hide_tutorial() -> void:
 	emit_signal("tutorial_closed")
 	# Nasconde il tutorial del livello
 	# TODO: animazione
 	tutorial_ui.hide()
-
+	get_tree().paused = false
 
 func avanza(punti: int) -> void:
 	# Avanza il livello di un certo numero di punti
@@ -92,7 +93,7 @@ func prossimo() -> void:
 	# Converte il livello nel prossimo livello
 	if prossimo_livello != null:
 		emit_signal("prossimo_livello_icona_pressed")
-		get_tree().change_scene(prossimo_livello)
+		get_tree().change_scene_to_packed(prossimo_livello)
 		# TODO: animazione scorrimento
 
 func torna_al_menu() -> void:

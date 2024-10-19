@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://savi8wf0l2pj" path="res://icon.svg" id="2_p10t0"]
 
 [node name="Livello" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
