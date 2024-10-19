@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED: float = 100.0
 var ball: CharacterBody2D
 
-var hit_chace: int = 50
+var hit_chace: int = 75
 var follow_ball: bool = true
 
 func _ready() -> void:

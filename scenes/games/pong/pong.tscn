@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbxx0parj2dri"]
+[gd_scene load_steps=15 format=3 uid="uid://dbxx0parj2dri"]
 
 [ext_resource type="Script" path="res://scripts/games/pong/player.gd" id="1_74sm3"]
 [ext_resource type="Script" path="res://scripts/games/pong/pong.gd" id="1_npehp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1dxjfjygk3n" path="res://assets/games/pong/ball.png" id="5_sq606"]
 [ext_resource type="PackedScene" uid="uid://blx1wer0qdq63" path="res://scenes/level.tscn" id="6_ay1a1"]
 [ext_resource type="PackedScene" uid="uid://bcuxuuexfskf8" path="res://scenes/games/space_invaders/space_invaders.tscn" id="7_3ag2u"]
+[ext_resource type="FontFile" uid="uid://vo6yjq41sb8o" path="res://assets/fonts/Minecraft.ttf" id="9_olaiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynayx"]
 size = Vector2(18, 122)
@@ -63,7 +64,7 @@ flip_h = true
 shape = SubResource("RectangleShape2D_ynayx")
 
 [node name="Ball" type="CharacterBody2D" parent="."]
-position = Vector2(1513, 520)
+position = Vector2(960, 540)
 motion_mode = 1
 script = ExtResource("2_lp8mg")
 
@@ -84,9 +85,6 @@ shape = SubResource("RectangleShape2D_kjnkd")
 position = Vector2(960, 1090)
 shape = SubResource("RectangleShape2D_kjnkd")
 
-[node name="Livello" parent="." instance=ExtResource("6_ay1a1")]
-prossimo_livello = ExtResource("7_3ag2u")
-
 [node name="PlayerArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayerArea"]
@@ -100,6 +98,39 @@ shape = SubResource("RectangleShape2D_uj5yo")
 position = Vector2(1930, 540)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_uj5yo")
+
+[node name="Livello" parent="." instance=ExtResource("6_ay1a1")]
+prossimo_livello = ExtResource("7_3ag2u")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="WinLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -80.0
+offset_right = 390.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(390, 80)
+theme_override_fonts/font = ExtResource("9_olaiq")
+theme_override_font_sizes/font_size = 160
+text = "YOU
+
+WON!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Player/HitArea" to="Enemy" method="_on_hit_area_body_entered"]
 [connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]
