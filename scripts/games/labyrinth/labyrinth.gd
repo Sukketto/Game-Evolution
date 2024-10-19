@@ -27,7 +27,6 @@ func _process(delta: float) -> void:
 	
 	if ball_on_floor == false:
 		$Camera3D.global_position.y -= 0.5
-		$GroundFar.visible = true
 		$Camera3D.global_position.x = $Ball.global_position.x
 		$Camera3D.global_position.z = $Ball.global_position.z
 		await get_tree().create_timer(10.0).timeout

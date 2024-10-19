@@ -17,4 +17,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_change_dir_timer_timeout() -> void:
 	direction = -direction
+	$AnimatedSprite2D.flip_h = true if direction == -1 else false
 	$ChangeDirTimer.start(randi_range(1, 15))
