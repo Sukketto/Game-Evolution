@@ -1,4 +1,4 @@
-class_name Enemy extends CharacterBody2D
+class_name EnemySI extends CharacterBody2D
 
 var direction: int = 1
 const SPEED: float = 500.0

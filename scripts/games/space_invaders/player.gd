@@ -1,4 +1,4 @@
-class_name Player extends CharacterBody2D
+class_name PlayerSI extends CharacterBody2D
 
 const SPEED: float = 600.0
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://cjpeyp3khxu7e"]
+[gd_scene load_steps=30 format=3 uid="uid://cjpeyp3khxu7e"]
 
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/ladder.gd" id="1_4m6y1"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/player.gd" id="1_mvbo8"]
+[ext_resource type="Script" path="res://scripts/games/donkey_kong/enemy.gd" id="3_giqqn"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/barrels_spawner.gd" id="3_tyibj"]
+[ext_resource type="PackedScene" uid="uid://brhoitveady62" path="res://scenes/games/donkey_kong/hammer.tscn" id="4_dr6fi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p1ceq"]
 size = Vector3(2000, 30, 1)
@@ -14,7 +16,7 @@ size = Vector2(2000, 30)
 size = Vector3(50, 80, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lmj5"]
-size = Vector2(50, 70)
+size = Vector2(50, 73)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3rsnc"]
 size = Vector3(50, 113, 1)
@@ -69,6 +71,12 @@ size = Vector2(50, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2asjd"]
 size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcbik"]
+size = Vector2(50, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaxt5"]
+size = Vector2(56, 56)
 
 [node name="DonkeyKong" type="Node2D"]
 
@@ -176,7 +184,7 @@ position = Vector2(0, 13)
 mesh = SubResource("BoxMesh_8u6j4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder3"]
-position = Vector2(0, -24)
+position = Vector2(0, -25.5)
 shape = SubResource("RectangleShape2D_4lmj5")
 
 [node name="Ladder4" type="Area2D" parent="Map"]
@@ -273,6 +281,28 @@ shape = SubResource("RectangleShape2D_n1ffk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource("RectangleShape2D_2asjd")
 
+[node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(485, 994)
+script = ExtResource("3_giqqn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Enemy"]
+modulate = Color(1, 0.0898438, 0.0898438, 1)
+mesh = SubResource("BoxMesh_1wqea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_rcbik")
+
+[node name="Area2D" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+shape = SubResource("RectangleShape2D_kaxt5")
+
+[node name="ChangeDirTimer" type="Timer" parent="Enemy"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
 [node name="BarrelsSpawner" type="Node2D" parent="."]
 position = Vector2(117, 124)
 script = ExtResource("3_tyibj")
@@ -280,6 +310,12 @@ script = ExtResource("3_tyibj")
 [node name="SpawnTimer" type="Timer" parent="BarrelsSpawner"]
 wait_time = 2.0
 autostart = true
+
+[node name="Hammer" parent="." instance=ExtResource("4_dr6fi")]
+position = Vector2(1524, 854)
+
+[node name="Hammer2" parent="." instance=ExtResource("4_dr6fi")]
+position = Vector2(196, 381)
 
 [connection signal="area_entered" from="Map/Ladder" to="Map/Ladder" method="_on_area_entered"]
 [connection signal="area_exited" from="Map/Ladder" to="Map/Ladder" method="_on_area_exited"]
@@ -299,4 +335,6 @@ autostart = true
 [connection signal="area_exited" from="Map/Ladder8" to="Map/Ladder8" method="_on_area_exited"]
 [connection signal="area_entered" from="Map/Ladder9" to="Map/Ladder9" method="_on_area_entered"]
 [connection signal="area_exited" from="Map/Ladder9" to="Map/Ladder9" method="_on_area_exited"]
+[connection signal="area_entered" from="Enemy/Area2D" to="Map/Ladder" method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Enemy/ChangeDirTimer" to="Enemy" method="_on_change_dir_timer_timeout"]
 [connection signal="timeout" from="BarrelsSpawner/SpawnTimer" to="BarrelsSpawner" method="_on_spawn_timer_timeout"]

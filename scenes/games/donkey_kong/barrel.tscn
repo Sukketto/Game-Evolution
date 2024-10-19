@@ -9,8 +9,8 @@ height = 50.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_nse5y"]
 radius = 25.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_r3mbi"]
-radius = 26.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qulv7"]
+size = Vector2(8, 26)
 
 [node name="Barrel" type="CharacterBody2D"]
 script = ExtResource("1_b8tl0")
@@ -21,9 +21,16 @@ mesh = SubResource("SphereMesh_8ckgi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nse5y")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["barrel"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_r3mbi")
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_qulv7")
+
+[node name="HittableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HittableArea"]
+shape = SubResource("CircleShape2D_nse5y")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="HittableArea" to="." method="_on_hittable_area_area_entered"]
