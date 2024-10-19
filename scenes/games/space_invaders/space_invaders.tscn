@@ -18,17 +18,20 @@ offset_bottom = 1080.0
 texture = ExtResource("1_xidkj")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(960, 1030)
+position = Vector2(50, 540)
 script = ExtResource("1_qniby")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
+rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("2_ax46u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_2d63j")
 
 [node name="Enemy" parent="." instance=ExtResource("2_pff8f")]
-position = Vector2(510, 50)
+position = Vector2(1838, 25)
 
 [node name="Shield" parent="." instance=ExtResource("3_aanc2")]
+position = Vector2(501, 539)

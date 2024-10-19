@@ -9,11 +9,12 @@ size = Vector3(200, 100, 1)
 size = Vector2(200, 100)
 
 [node name="Shield" type="StaticBody2D"]
-position = Vector2(256, 597)
 script = ExtResource("1_i6soc")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 1.5708
 mesh = SubResource("BoxMesh_k7c5k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_8l7el")

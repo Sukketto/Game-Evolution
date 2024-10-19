@@ -1,0 +1,126 @@
+[gd_scene load_steps=3 format=3 uid="uid://blx1wer0qdq63"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_6w5ip"]
+[ext_resource type="Texture2D" uid="uid://savi8wf0l2pj" path="res://icon.svg" id="2_p10t0"]
+
+[node name="Livello" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_6w5ip")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 1
+
+[node name="Livello" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -484.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 148.0
+grow_horizontal = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Livello Corrente" type="TextureButton" parent="UI/Livello"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Texture" type="TextureRect" parent="UI/Livello/Livello Corrente"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_p10t0")
+
+[node name="Avanzamento" type="VBoxContainer" parent="UI/Livello"]
+layout_mode = 2
+alignment = 1
+
+[node name="Barra Avanzamento" type="ProgressBar" parent="UI/Livello/Avanzamento"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+value = 40.0
+show_percentage = false
+
+[node name="Livello Successivo" type="TextureButton" parent="UI/Livello"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Texture" type="TextureRect" parent="UI/Livello/Livello Successivo"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("2_p10t0")
+
+[node name="Tutorial" type="TextureRect" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -450.0
+offset_right = 800.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p10t0")
+
+[node name="Testi" type="VBoxContainer" parent="UI/Tutorial"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titolo" type="Label" parent="UI/Tutorial/Testi"]
+layout_mode = 2
+text = "Titolo"
+horizontal_alignment = 1
+
+[node name="Cateogia" type="Label" parent="UI/Tutorial/Testi"]
+layout_mode = 2
+text = "Categoria"
+horizontal_alignment = 1
+
+[node name="Istruzioni" type="HBoxContainer" parent="UI/Tutorial/Testi"]
+layout_mode = 2
+
+[node name="Descrizione" type="RichTextLabel" parent="UI/Tutorial/Testi/Istruzioni"]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 2
+text = "Descrizione"
+fit_content = true
+
+[node name="Comandi" type="TextureRect" parent="UI/Tutorial/Testi/Istruzioni"]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 2
+texture = ExtResource("2_p10t0")
+
+[node name="Esci" type="TextureButton" parent="UI"]
+layout_mode = 1
+offset_bottom = 128.0
+
+[node name="Icona Esci" type="TextureRect" parent="UI/Esci"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 148.0
+offset_bottom = 148.0
+texture = ExtResource("2_p10t0")

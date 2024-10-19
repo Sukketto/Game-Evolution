@@ -29,7 +29,7 @@ animations = [{
 size = Vector2(58, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaxt5"]
-size = Vector2(70, 88)
+size = Vector2(70, 44)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -50,6 +50,7 @@ shape = SubResource("RectangleShape2D_rcbik")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_kaxt5")
 
 [node name="ChangeDirTimer" type="Timer" parent="."]

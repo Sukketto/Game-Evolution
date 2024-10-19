@@ -13,6 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 				enemy.position = position
 				# Usa call_deferred per aggiungere il nemico dopo che il motore ha finito di processare la fisica
 				get_parent().call_deferred("add_child", enemy)
+		body.queue_free()
 
 func is_enemy() -> bool:
 	for enemy in $"..".get_children():

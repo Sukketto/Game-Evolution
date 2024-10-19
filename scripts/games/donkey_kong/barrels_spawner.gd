@@ -15,4 +15,3 @@ func check_barrels():
 	for b in $"..".get_children():
 		if b is Barrel:
 			barrels_counter += 1
-			print(barrels_counter )

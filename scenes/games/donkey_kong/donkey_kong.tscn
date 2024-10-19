@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://cjpeyp3khxu7e"]
+[gd_scene load_steps=95 format=4 uid="uid://cjpeyp3khxu7e"]
 
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/ladder.gd" id="1_4m6y1"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/player.gd" id="1_mvbo8"]
@@ -221,7 +221,7 @@ animations = [{
 size = Vector2(50, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2asjd"]
-size = Vector2(50, 50)
+size = Vector2(50, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4j4x1"]
 atlas = ExtResource("7_mgwow")
@@ -407,7 +407,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcvo2"]
-size = Vector2(130, 128)
+size = Vector2(66.8775, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pqom"]
 atlas = ExtResource("12_2cqcb")
@@ -565,6 +565,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lf1i"]
 size = Vector2(107, 96)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e5hh"]
+size = Vector2(20, 934)
+
 [node name="DonkeyKong" type="Node2D"]
 script = ExtResource("1_ssu6c")
 
@@ -715,6 +718,7 @@ shape = SubResource("RectangleShape2D_n1ffk")
 [node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2asjd")
 
 [node name="BarrelsSpawner" type="Node2D" parent="."]
@@ -726,7 +730,7 @@ wait_time = 1.9
 autostart = true
 
 [node name="Hammer" parent="." instance=ExtResource("4_dr6fi")]
-position = Vector2(1524, 854)
+position = Vector2(145, 731)
 
 [node name="Hammer2" parent="." instance=ExtResource("4_dr6fi")]
 position = Vector2(196, 381)
@@ -743,11 +747,13 @@ rotation = -0.0174533
 script = ExtResource("11_rsh5t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemySpawner"]
+z_index = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_fqg5m")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawner"]
+position = Vector2(-31.5612, 0)
 shape = SubResource("RectangleShape2D_wcvo2")
 
 [node name="NextLevelArea" type="Area2D" parent="."]
@@ -764,6 +770,16 @@ shape = SubResource("RectangleShape2D_7lf1i")
 
 [node name="Enemy" parent="." instance=ExtResource("15_g2yj5")]
 position = Vector2(21, 1012)
+
+[node name="Borders" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+position = Vector2(0, 467)
+shape = SubResource("RectangleShape2D_4e5hh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(1920, 467)
+shape = SubResource("RectangleShape2D_4e5hh")
 
 [connection signal="area_entered" from="Map/Ladder" to="Map/Ladder" method="_on_area_entered"]
 [connection signal="area_exited" from="Map/Ladder" to="Map/Ladder" method="_on_area_exited"]

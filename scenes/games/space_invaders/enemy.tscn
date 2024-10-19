@@ -60,13 +60,15 @@ size = Vector2(58, 41)
 script = ExtResource("1_tnry1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2qj3n")
 autoplay = "default"
 frame_progress = 0.705718
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11.5)
+position = Vector2(11, 0)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_2d63j")
 
 [node name="ChangeDirTimer" type="Timer" parent="."]

@@ -4,7 +4,7 @@ var direction: Vector2
 const SPEED: float = 1000.0
 
 func _ready() -> void:
-	direction = Vector2.DOWN if modulate == Color("00ff16") else Vector2.UP
+	direction = Vector2.LEFT if modulate == Color("00ff16") else Vector2.RIGHT
 
 func _process(delta: float) -> void:
 	position += direction * SPEED * delta

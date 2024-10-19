@@ -14,6 +14,7 @@ func move_to_new_parent(new_parent: Node) -> void:
 	# Questa funzione viene chiamata in modo differito per evitare problemi con il callback della fisica
 	get_parent().remove_child(self)
 	self.position = Vector2.ZERO
+	$HammerTexture/CollisionShape2D.disabled = false
 	new_parent.add_child(self)
 
 func _on_hammer_texture_body_entered(body: Node2D) -> void:
