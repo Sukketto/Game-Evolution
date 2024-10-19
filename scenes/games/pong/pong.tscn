@@ -1,18 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://dbxx0parj2dri"]
 
 [ext_resource type="Script" path="res://scripts/games/pong/player.gd" id="1_74sm3"]
+[ext_resource type="Texture2D" uid="uid://dsbh7ftkq2npo" path="res://assets/games/pong/paddle.png" id="2_hv85l"]
 [ext_resource type="Script" path="res://scripts/games/pong/ball.gd" id="2_lp8mg"]
 [ext_resource type="Script" path="res://scripts/games/pong/enemy.gd" id="2_xoa83"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_do3rh"]
-size = Vector3(30, 150, 1)
+[ext_resource type="Texture2D" uid="uid://bj1dxjfjygk3n" path="res://assets/games/pong/ball.png" id="5_sq606"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynayx"]
-size = Vector2(30, 150)
-
-[sub_resource type="SphereMesh" id="SphereMesh_xocdl"]
-radius = 15.0
-height = 30.0
+size = Vector2(18, 122)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ghqe"]
 radius = 15.0
@@ -24,14 +19,20 @@ size = Vector2(1920, 20)
 size = Vector2(1080, 20)
 
 [node name="Pong" type="Node2D"]
+texture_filter = 1
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.185547, 0.185547, 0.185547, 1)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(50, 540)
 motion_mode = 1
 script = ExtResource("1_74sm3")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
-mesh = SubResource("BoxMesh_do3rh")
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_hv85l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_ynayx")
@@ -41,8 +42,9 @@ position = Vector2(1870, 540)
 motion_mode = 1
 script = ExtResource("2_xoa83")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Enemy"]
-mesh = SubResource("BoxMesh_do3rh")
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("2_hv85l")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource("RectangleShape2D_ynayx")
@@ -52,8 +54,9 @@ position = Vector2(1513, 520)
 motion_mode = 1
 script = ExtResource("2_lp8mg")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Ball"]
-mesh = SubResource("SphereMesh_xocdl")
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_sq606")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_7ghqe")

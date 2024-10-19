@@ -25,12 +25,22 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
+		if direction == 1:
+			$AnimatedSprite2D.flip_h = false
+		elif direction == -1:
+			$AnimatedSprite2D.flip_h = true
 		for h in get_children():
 			if h is Hammer:
 				h.scale.x = direction if direction != 0 else h.scale.x
 		
 	move_and_slide()
 	
+	if velocity.y != 0:
+		$AnimatedSprite2D.play("jump")
+	elif velocity.x != 0:
+		$AnimatedSprite2D.play("move")
+	else:
+		$AnimatedSprite2D.play("idle")
 	
 	if is_on_ladder:
 		if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down"):
