@@ -26,10 +26,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcbik"]
-size = Vector2(66, 10)
+size = Vector2(58, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaxt5"]
-size = Vector2(66, 88)
+size = Vector2(70, 88)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -41,7 +41,7 @@ position = Vector2(0, -4)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_x1blg")
 autoplay = "default"
-frame_progress = 0.561768
+frame_progress = 0.870328
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 39)
@@ -57,4 +57,5 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="ChangeDirTimer" to="." method="_on_change_dir_timer_timeout"]

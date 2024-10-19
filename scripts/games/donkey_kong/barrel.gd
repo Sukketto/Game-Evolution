@@ -36,3 +36,6 @@ func restart():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	$AnimatedSprite2D.play("movement")
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()

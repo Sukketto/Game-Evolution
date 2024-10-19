@@ -6,7 +6,6 @@ var counter: int = 0
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Barrel:
-		print(counter)
 		counter += 1
 		if counter % 4 == 0 and counter != 0:
 			if not is_enemy():
