@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1hmgghdgqb1m"]
+
+[ext_resource type="Script" path="res://scripts/games/donkey_kong/barrel.gd" id="1_b8tl0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8ckgi"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nse5y"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3mbi"]
+radius = 26.0
+
+[node name="Barrel" type="CharacterBody2D"]
+script = ExtResource("1_b8tl0")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_8ckgi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nse5y")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_r3mbi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

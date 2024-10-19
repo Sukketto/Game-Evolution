@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcuxuuexfskf8"]
+
+[ext_resource type="Script" path="res://scripts/games/space_invaders/player.gd" id="1_qniby"]
+[ext_resource type="PackedScene" uid="uid://cai337qufa5k1" path="res://scenes/games/space_invaders/enemy.tscn" id="2_pff8f"]
+[ext_resource type="PackedScene" uid="uid://brlqbq6dfs3xo" path="res://scenes/games/space_invaders/shield.tscn" id="3_aanc2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2td8l"]
+size = Vector3(50, 40, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d63j"]
+size = Vector2(50, 40)
+
+[node name="SpaceInvaders" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(960, 1030)
+script = ExtResource("1_qniby")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+mesh = SubResource("BoxMesh_2td8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_2d63j")
+
+[node name="Enemy" parent="." instance=ExtResource("2_pff8f")]
+position = Vector2(510, 50)
+
+[node name="Shield" parent="." instance=ExtResource("3_aanc2")]

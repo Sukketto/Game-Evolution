@@ -1,0 +1,302 @@
+[gd_scene load_steps=26 format=3 uid="uid://cjpeyp3khxu7e"]
+
+[ext_resource type="Script" path="res://scripts/games/donkey_kong/ladder.gd" id="1_4m6y1"]
+[ext_resource type="Script" path="res://scripts/games/donkey_kong/player.gd" id="1_mvbo8"]
+[ext_resource type="Script" path="res://scripts/games/donkey_kong/barrels_spawner.gd" id="3_tyibj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1ceq"]
+size = Vector3(2000, 30, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_030vt"]
+size = Vector2(2000, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mkskn"]
+size = Vector3(50, 80, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lmj5"]
+size = Vector2(50, 70)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3rsnc"]
+size = Vector3(50, 113, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upvxm"]
+size = Vector2(50, 98)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8u6j4"]
+size = Vector3(50, 88, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eq664"]
+size = Vector3(50, 110, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dja1q"]
+size = Vector2(50, 98)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d8ptv"]
+size = Vector3(50, 100, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rs85"]
+size = Vector2(50, 85)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y7t8j"]
+size = Vector3(50, 125, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy884"]
+size = Vector2(50, 112)
+
+[sub_resource type="BoxMesh" id="BoxMesh_efm5x"]
+size = Vector3(50, 112, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gdfc"]
+size = Vector2(50, 98)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mihha"]
+size = Vector3(50, 136, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aabl"]
+size = Vector2(50, 125)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypu18"]
+size = Vector3(50, 120, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek3jk"]
+size = Vector2(50, 106)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1wqea"]
+size = Vector3(50, 50, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1ffk"]
+size = Vector2(50, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2asjd"]
+size = Vector2(50, 50)
+
+[node name="DonkeyKong" type="Node2D"]
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="Beam" type="StaticBody2D" parent="Map"]
+position = Vector2(959, 1055)
+rotation = -0.0174533
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Beam"]
+modulate = Color(1, 0.175781, 0.175781, 1)
+mesh = SubResource("BoxMesh_p1ceq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Beam"]
+shape = SubResource("RectangleShape2D_030vt")
+
+[node name="Beam2" type="StaticBody2D" parent="Map"]
+position = Vector2(778, 906)
+rotation = 0.0349066
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Beam2"]
+modulate = Color(1, 0.175781, 0.175781, 1)
+mesh = SubResource("BoxMesh_p1ceq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Beam2"]
+shape = SubResource("RectangleShape2D_030vt")
+
+[node name="Beam3" type="StaticBody2D" parent="Map"]
+position = Vector2(1144, 755)
+rotation = -0.0174533
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Beam3"]
+modulate = Color(1, 0.175781, 0.175781, 1)
+mesh = SubResource("BoxMesh_p1ceq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Beam3"]
+shape = SubResource("RectangleShape2D_030vt")
+
+[node name="Beam4" type="StaticBody2D" parent="Map"]
+position = Vector2(720, 613)
+rotation = 0.00872665
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Beam4"]
+modulate = Color(1, 0.175781, 0.175781, 1)
+mesh = SubResource("BoxMesh_p1ceq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Beam4"]
+shape = SubResource("RectangleShape2D_030vt")
+
+[node name="Beam5" type="StaticBody2D" parent="Map"]
+position = Vector2(1158, 444)
+rotation = -0.0261799
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Beam5"]
+modulate = Color(1, 0.175781, 0.175781, 1)
+mesh = SubResource("BoxMesh_p1ceq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Beam5"]
+shape = SubResource("RectangleShape2D_030vt")
+
+[node name="Beam6" type="StaticBody2D" parent="Map"]
+position = Vector2(718, 271)
+rotation = 0.0174533
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Beam6"]
+modulate = Color(1, 0.175781, 0.175781, 1)
+mesh = SubResource("BoxMesh_p1ceq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Beam6"]
+shape = SubResource("RectangleShape2D_030vt")
+
+[node name="Ladder" type="Area2D" parent="Map"]
+position = Vector2(1638, 972)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, 17)
+mesh = SubResource("BoxMesh_mkskn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_4lmj5")
+
+[node name="Ladder2" type="Area2D" parent="Map"]
+position = Vector2(741, 830)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder2"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, 4)
+mesh = SubResource("BoxMesh_3rsnc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder2"]
+position = Vector2(0, -35)
+shape = SubResource("RectangleShape2D_upvxm")
+
+[node name="Ladder3" type="Area2D" parent="Map"]
+position = Vector2(252, 816)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder3"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, 13)
+mesh = SubResource("BoxMesh_8u6j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder3"]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_4lmj5")
+
+[node name="Ladder4" type="Area2D" parent="Map"]
+position = Vector2(1078, 679)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder4"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, 7)
+mesh = SubResource("BoxMesh_eq664")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder4"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_dja1q")
+
+[node name="Ladder5" type="Area2D" parent="Map"]
+position = Vector2(1567, 679)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder5"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, 5)
+mesh = SubResource("BoxMesh_d8ptv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder5"]
+position = Vector2(0, -32.5)
+shape = SubResource("RectangleShape2D_2rs85")
+
+[node name="Ladder6" type="Area2D" parent="Map"]
+position = Vector2(628, 537)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder6"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, -2)
+mesh = SubResource("BoxMesh_y7t8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder6"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_dy884")
+
+[node name="Ladder7" type="Area2D" parent="Map"]
+position = Vector2(258, 539)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder7"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, -1)
+mesh = SubResource("BoxMesh_efm5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder7"]
+position = Vector2(0, -39)
+shape = SubResource("RectangleShape2D_3gdfc")
+
+[node name="Ladder8" type="Area2D" parent="Map"]
+position = Vector2(1173, 374)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder8"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, -13)
+mesh = SubResource("BoxMesh_mihha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder8"]
+position = Vector2(0, -49.5)
+shape = SubResource("RectangleShape2D_0aabl")
+
+[node name="Ladder9" type="Area2D" parent="Map"]
+position = Vector2(1562, 364)
+script = ExtResource("1_4m6y1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/Ladder9"]
+modulate = Color(0.174988, 0.953125, 0.907531, 1)
+position = Vector2(0, -4)
+mesh = SubResource("BoxMesh_ypu18")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Ladder9"]
+position = Vector2(0, -42)
+shape = SubResource("RectangleShape2D_ek3jk")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(263, 989)
+script = ExtResource("1_mvbo8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+mesh = SubResource("BoxMesh_1wqea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_n1ffk")
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource("RectangleShape2D_2asjd")
+
+[node name="BarrelsSpawner" type="Node2D" parent="."]
+position = Vector2(117, 124)
+script = ExtResource("3_tyibj")
+
+[node name="SpawnTimer" type="Timer" parent="BarrelsSpawner"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="area_entered" from="Map/Ladder" to="Map/Ladder" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder" to="Map/Ladder" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder2" to="Map/Ladder2" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder2" to="Map/Ladder2" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder3" to="Map/Ladder3" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder3" to="Map/Ladder3" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder4" to="Map/Ladder4" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder4" to="Map/Ladder4" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder5" to="Map/Ladder5" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder5" to="Map/Ladder5" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder6" to="Map/Ladder6" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder6" to="Map/Ladder6" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder7" to="Map/Ladder7" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder7" to="Map/Ladder7" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder8" to="Map/Ladder8" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder8" to="Map/Ladder8" method="_on_area_exited"]
+[connection signal="area_entered" from="Map/Ladder9" to="Map/Ladder9" method="_on_area_entered"]
+[connection signal="area_exited" from="Map/Ladder9" to="Map/Ladder9" method="_on_area_exited"]
+[connection signal="timeout" from="BarrelsSpawner/SpawnTimer" to="BarrelsSpawner" method="_on_spawn_timer_timeout"]
