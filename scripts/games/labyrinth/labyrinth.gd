@@ -4,13 +4,17 @@ const INCLINATION: float = 1.0
 const MAX_ROTATION: float = 45.0
 
 var ball_on_floor: bool = true
+var started = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	await $AnimationPlayer.animation_finished
+	$Livello.show_tutorial()
+	started = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not started: return
 	if Input.is_action_pressed("left"):
 		$Ground.rotation_degrees.z -= INCLINATION
 	elif Input.is_action_pressed("right"):

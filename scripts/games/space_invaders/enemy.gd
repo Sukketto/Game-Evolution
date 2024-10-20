@@ -13,6 +13,6 @@ func _on_change_dir_timer_timeout() -> void:
 
 func _on_shoot_timer_timeout() -> void:
 	var bullet: Area2D = bullet_scene.instantiate()
-	bullet.modulate = Color("00ff16")
+	bullet.modulate = Color("AA1111")
 	bullet.global_position = global_position - Vector2(50, 0)
 	$"../..".add_child(bullet)

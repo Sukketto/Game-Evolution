@@ -41,6 +41,8 @@ class_name Livello extends Node
 @export var titolo: String
 @export var descrizione: String
 @export var comandi: Texture2D
+@export var show_tutoria: bool = true
+
 # Elementi grafici
 @onready var tutorial_ui: Control = $UI/Tutorial
 @onready var livello_corrente_ui: Control = $"UI/Livello/Livello Corrente"
@@ -74,7 +76,8 @@ func _ready() -> void:
 	menu_ui.connect("pressed", torna_al_menu)
 
 	# Mostra il tutorial
-	show_tutorial()
+	if show_tutoria:
+		show_tutorial()
 
 func show_tutorial() -> void:
 	emit_signal("tutorial_opened")
