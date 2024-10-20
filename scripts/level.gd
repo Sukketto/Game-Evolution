@@ -71,6 +71,7 @@ func _ready() -> void:
 	tutorial_ui.connect("gui_input", on_tutorial_clicked)
 	livello_corrente_ui.connect("gui_input", on_icona_pressed)
 	livello_successivo_ui.connect("gui_input", on_prossimo_livello_icona_pressed)
+	menu_ui.connect("pressed", torna_al_menu)
 
 	# Mostra il tutorial
 	show_tutorial()
@@ -112,16 +113,20 @@ func prossimo() -> void:
 		# TODO: animazione scorrimento
 
 func torna_al_menu() -> void:
+	conferma_torna_al_menu()
+	return
 	# mostra un popup di conferma
 	var popup = Popup.new()
 	popup.set_title("Torna al menu")
 	popup.set_text("Sei sicuro di voler tornare al menu principale?")
 	popup.connect("confirmed", conferma_torna_al_menu)
 	popup.popup_centered()
+	add_child(popup)
+	popup.show()
 
 func conferma_torna_al_menu() -> void:
 	# Torna al menu principale
-	get_tree().change_scene(menu)
+	get_tree().change_scene_to_packed(load(menu))
 	# TODO: animazione
 
 # Callback

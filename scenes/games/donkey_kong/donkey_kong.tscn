@@ -1,9 +1,10 @@
-[gd_scene load_steps=99 format=4 uid="uid://cjpeyp3khxu7e"]
+[gd_scene load_steps=100 format=4 uid="uid://cjpeyp3khxu7e"]
 
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/ladder.gd" id="1_4m6y1"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/player.gd" id="1_mvbo8"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/donkey_kong.gd" id="1_ssu6c"]
 [ext_resource type="Texture2D" uid="uid://cijtua2l8d6mp" path="res://assets/games/donkey_kong/platform_tileset.png" id="2_666as"]
+[ext_resource type="Texture2D" uid="uid://bvaohtu468y7x" path="res://assets/games/donkey_kong/background_dk.png" id="2_luuon"]
 [ext_resource type="Texture2D" uid="uid://cuwxr5ew7ksgv" path="res://assets/games/donkey_kong/ladder_tileset.png" id="3_3bisn"]
 [ext_resource type="Texture2D" uid="uid://snknslb50ld7" path="res://assets/games/donkey_kong/player_dk_jump.png" id="3_5g2up"]
 [ext_resource type="Texture2D" uid="uid://dro8441a08rqg" path="res://assets/games/donkey_kong/player_dk_movement.png" id="3_dxx3u"]
@@ -574,6 +575,25 @@ size = Vector2(20, 934)
 
 [node name="DonkeyKong" type="Node2D"]
 script = ExtResource("1_ssu6c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.5)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 384.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+texture = ExtResource("2_luuon")
 
 [node name="Map" type="Node2D" parent="."]
 

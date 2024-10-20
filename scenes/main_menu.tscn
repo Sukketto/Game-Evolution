@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://cacoa7y1h7ntr"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_4d6en"]
+[ext_resource type="Texture2D" uid="uid://dddkqn6xnjame" path="res://assets/ui/menu_backgorund.png" id="2_x8ggj"]
+[ext_resource type="FontFile" uid="uid://vo6yjq41sb8o" path="res://assets/fonts/Minecraft.ttf" id="3_30p33"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prh1v"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.415686, 0.396078, 0.588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfapg"]
+bg_color = Color(0.415686, 0.396078, 0.588235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4d6en")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_x8ggj")
+
+[node name="QuitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(100, 15)
+theme_override_fonts/font = ExtResource("3_30p33")
+theme_override_styles/focus = SubResource("StyleBoxFlat_prh1v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_prh1v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_prh1v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfapg")
+text = "QUIT"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
