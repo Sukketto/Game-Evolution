@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 			spawn_bullet()
 
 func spawn_bullet():
+	$AudioStreamPlayer.play()
 	var bullet: Area2D = bullet_scene.instantiate()
 	bullet.global_position = global_position + Vector2(50, 0)
 	get_parent().add_child(bullet)

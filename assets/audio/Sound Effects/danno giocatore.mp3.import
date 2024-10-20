@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhjt00aquwa1h"
+path="res://.godot/imported/danno giocatore.mp3-8576e10253d45786357dee6499bb476e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/danno giocatore.mp3"
+dest_files=["res://.godot/imported/danno giocatore.mp3-8576e10253d45786357dee6499bb476e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

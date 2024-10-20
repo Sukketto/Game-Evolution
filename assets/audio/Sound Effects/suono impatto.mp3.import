@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3r4lvjvchnmb"
+path="res://.godot/imported/suono impatto.mp3-aa5abdeba0c9f05f6247877715a4e89d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/suono impatto.mp3"
+dest_files=["res://.godot/imported/suono impatto.mp3-aa5abdeba0c9f05f6247877715a4e89d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

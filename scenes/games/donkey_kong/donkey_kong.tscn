@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=4 uid="uid://cjpeyp3khxu7e"]
+[gd_scene load_steps=105 format=4 uid="uid://cjpeyp3khxu7e"]
 
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/ladder.gd" id="1_4m6y1"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/player.gd" id="1_mvbo8"]
@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cuwxr5ew7ksgv" path="res://assets/games/donkey_kong/ladder_tileset.png" id="3_3bisn"]
 [ext_resource type="Texture2D" uid="uid://snknslb50ld7" path="res://assets/games/donkey_kong/player_dk_jump.png" id="3_5g2up"]
 [ext_resource type="Texture2D" uid="uid://dro8441a08rqg" path="res://assets/games/donkey_kong/player_dk_movement.png" id="3_dxx3u"]
+[ext_resource type="AudioStream" uid="uid://duanxxjyxm1gv" path="res://assets/audio/Soundtracks/8bit-music-for-game-68698.mp3" id="3_t60cj"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/barrels_spawner.gd" id="3_tyibj"]
 [ext_resource type="PackedScene" uid="uid://brhoitveady62" path="res://scenes/games/donkey_kong/hammer.tscn" id="4_dr6fi"]
 [ext_resource type="Texture2D" uid="uid://buueftpnttniw" path="res://assets/games/donkey_kong/boss_dk_idle.png" id="7_mgwow"]
 [ext_resource type="Texture2D" uid="uid://cmd2qtrfkeb1k" path="res://assets/games/donkey_kong/blob_transporter.png" id="8_ka0gc"]
+[ext_resource type="AudioStream" uid="uid://bqqgodoby21ir" path="res://assets/audio/Sound Effects/salto.mp3" id="10_hkjtt"]
 [ext_resource type="Script" path="res://scripts/games/donkey_kong/enemy_spawner.gd" id="11_rsh5t"]
 [ext_resource type="Texture2D" uid="uid://ye3sdyb2vndb" path="res://assets/games/donkey_kong/next_level_player.png" id="12_2cqcb"]
 [ext_resource type="Texture2D" uid="uid://cux6h6j07yg0s" path="res://assets/games/donkey_kong/next_level_door_dk.png" id="13_g2c0v"]
@@ -20,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://ho8bfdm5ijwg" path="res://scenes/games/labyrinth/labyrinth.tscn" id="17_0op1e"]
 [ext_resource type="Texture2D" uid="uid://cj4wawappgrul" path="res://assets/ui/dk_icon.png" id="18_2lrbj"]
 [ext_resource type="Texture2D" uid="uid://brqalcvuwwyjd" path="res://assets/ui/labyrinth_icon.png" id="19_3y6ag"]
+[ext_resource type="AudioStream" uid="uid://dfv8f1ma6hdjr" path="res://assets/audio/Sound Effects/Win sound effect.mp3" id="23_afpb1"]
+[ext_resource type="Texture2D" uid="uid://dttgs5wuugisc" path="res://assets/ui/donkey_kong_controls.png" id="23_sfvrq"]
+[ext_resource type="FontFile" uid="uid://vo6yjq41sb8o" path="res://assets/fonts/Minecraft.ttf" id="24_svspq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qncrc"]
 texture = ExtResource("2_666as")
@@ -595,6 +600,11 @@ grow_vertical = 2
 scale = Vector2(5, 5)
 texture = ExtResource("2_luuon")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Background"]
+stream = ExtResource("3_t60cj")
+autoplay = true
+parameters/looping = true
+
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Beam1" type="TileMapLayer" parent="Map"]
@@ -723,7 +733,7 @@ position = Vector2(0, -42)
 shape = SubResource("RectangleShape2D_ek3jk")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(885, 177)
+position = Vector2(219, 985)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_mvbo8")
@@ -744,6 +754,10 @@ shape = SubResource("RectangleShape2D_n1ffk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2asjd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("10_hkjtt")
+volume_db = -15.0
 
 [node name="BarrelsSpawner" type="Node2D" parent="."]
 position = Vector2(293, 140)
@@ -813,6 +827,40 @@ prossimo_livello_icone = Array[Texture2D]([ExtResource("19_3y6ag")])
 categoria = "Platform"
 titolo = "Donkey Kong"
 descrizione = "Il tuo obiettivo è prendere il teletrasporto, difeso dall’alieno in cima alle piattaforme."
+comandi = ExtResource("23_sfvrq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_afpb1")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="WinLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -80.0
+offset_right = 390.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(390, 80)
+theme_override_fonts/font = ExtResource("24_svspq")
+theme_override_font_sizes/font_size = 160
+text = "YOU
+
+WON!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="Map/Ladder" to="Map/Ladder" method="_on_area_entered"]
 [connection signal="area_exited" from="Map/Ladder" to="Map/Ladder" method="_on_area_exited"]

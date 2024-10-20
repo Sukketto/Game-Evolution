@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmvv7uo2jfc2i"
+path="res://.godot/imported/scudo nemici.mp3-f882099230a0153f10db768faab2d870.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/scudo nemici.mp3"
+dest_files=["res://.godot/imported/scudo nemici.mp3-f882099230a0153f10db768faab2d870.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

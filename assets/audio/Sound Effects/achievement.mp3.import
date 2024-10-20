@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2or20h77x2ym"
+path="res://.godot/imported/achievement.mp3-88b9e90132e9c4b07867dd7fdc728f1e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/achievement.mp3"
+dest_files=["res://.godot/imported/achievement.mp3-88b9e90132e9c4b07867dd7fdc728f1e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

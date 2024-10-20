@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfv8f1ma6hdjr"
+path="res://.godot/imported/Win sound effect.mp3-fbf26fd637db216aa5d163730e607584.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/Win sound effect.mp3"
+dest_files=["res://.godot/imported/Win sound effect.mp3-fbf26fd637db216aa5d163730e607584.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

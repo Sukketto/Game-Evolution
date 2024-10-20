@@ -16,6 +16,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Shield:
 		body.state -= 1
 		queue_free()
-	else:
+	elif body is EnemySI:
+		$"../Livello".avanza(10)
 		body.queue_free()
 		queue_free()
+	else:
+		get_tree().reload_current_scene()

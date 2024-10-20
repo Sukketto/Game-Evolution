@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2wt7j0ta3g2c"
+path="res://.godot/imported/space-laser-38082(1).mp3-2a4716d6f62f1fb5a7da5ae414851d21.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/space-laser-38082(1).mp3"
+dest_files=["res://.godot/imported/space-laser-38082(1).mp3-2a4716d6f62f1fb5a7da5ae414851d21.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

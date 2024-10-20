@@ -1,7 +1,7 @@
 class_name EnemySI extends CharacterBody2D
 
 var direction: int = 1
-const SPEED: float = 500.0
+const SPEED: float = 100.0
 
 var bullet_scene: PackedScene = preload("res://scenes/games/space_invaders/bullet.tscn")
 

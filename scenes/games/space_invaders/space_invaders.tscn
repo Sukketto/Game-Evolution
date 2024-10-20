@@ -1,17 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcuxuuexfskf8"]
+[gd_scene load_steps=17 format=3 uid="uid://bcuxuuexfskf8"]
 
 [ext_resource type="Script" path="res://scripts/games/space_invaders/space_invaders.gd" id="1_7ewtk"]
 [ext_resource type="Script" path="res://scripts/games/space_invaders/player.gd" id="1_qniby"]
 [ext_resource type="Texture2D" uid="uid://0pvfkion0gxc" path="res://assets/games/space_invaders/background.si.png" id="1_xidkj"]
 [ext_resource type="Texture2D" uid="uid://86pnecu31a53" path="res://assets/games/space_invaders/spaceship_player_si.png" id="2_ax46u"]
 [ext_resource type="PackedScene" uid="uid://cai337qufa5k1" path="res://scenes/games/space_invaders/enemy.tscn" id="2_pff8f"]
+[ext_resource type="AudioStream" uid="uid://sgfkrr1fx48r" path="res://assets/audio/Soundtracks/SpaceInvaders.mp3" id="3_2dm7q"]
 [ext_resource type="PackedScene" uid="uid://brlqbq6dfs3xo" path="res://scenes/games/space_invaders/shield.tscn" id="3_aanc2"]
 [ext_resource type="PackedScene" uid="uid://blx1wer0qdq63" path="res://scenes/level.tscn" id="6_81b78"]
+[ext_resource type="AudioStream" uid="uid://c2wt7j0ta3g2c" path="res://assets/audio/Sound Effects/space-laser-38082(1).mp3" id="6_kh1he"]
 [ext_resource type="Texture2D" uid="uid://bf562pptb543n" path="res://assets/ui/space_invaders_icon.png" id="7_fhghu"]
 [ext_resource type="PackedScene" uid="uid://cjpeyp3khxu7e" path="res://scenes/games/donkey_kong/donkey_kong.tscn" id="8_tkedu"]
 [ext_resource type="Texture2D" uid="uid://cj4wawappgrul" path="res://assets/ui/dk_icon.png" id="8_xptvr"]
 [ext_resource type="FontFile" uid="uid://vo6yjq41sb8o" path="res://assets/fonts/Minecraft.ttf" id="9_gv31r"]
 [ext_resource type="VideoStream" path="res://assets/transitions/2-3.ogv" id="11_tjkli"]
+[ext_resource type="Texture2D" uid="uid://b82fjugkqh3rn" path="res://assets/ui/space_invaders_controls.png" id="13_qjwwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d63j"]
 size = Vector2(64, 52)
@@ -24,6 +27,11 @@ script = ExtResource("1_7ewtk")
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_xidkj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Background"]
+stream = ExtResource("3_2dm7q")
+autoplay = true
+parameters/looping = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(50, 540)
@@ -38,8 +46,8 @@ texture = ExtResource("2_ax46u")
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_2d63j")
 
-[node name="Enemy" parent="." instance=ExtResource("2_pff8f")]
-position = Vector2(1838, 25)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("6_kh1he")
 
 [node name="Shield" parent="." instance=ExtResource("3_aanc2")]
 position = Vector2(600, 290)
@@ -50,6 +58,36 @@ position = Vector2(600, 540)
 [node name="Shield3" parent="." instance=ExtResource("3_aanc2")]
 position = Vector2(600, 790)
 
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 140)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 240)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 340)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 440)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 540)
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 640)
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 740)
+
+[node name="Enemy8" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 840)
+
+[node name="Enemy9" parent="Enemies" instance=ExtResource("2_pff8f")]
+position = Vector2(1838, 940)
+
 [node name="Livello" parent="." instance=ExtResource("6_81b78")]
 prossimo_livello = ExtResource("8_tkedu")
 livello_corrente = ExtResource("7_fhghu")
@@ -57,6 +95,7 @@ prossimo_livello_icone = Array[Texture]([ExtResource("8_xptvr")])
 categoria = "Arcade"
 titolo = "Space Invaders"
 descrizione = "Elimina tutte le ondate di alieni prima che raggiungano la parte inferiore dello schermo."
+comandi = ExtResource("13_qjwwu")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -89,8 +128,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Transition" type="VideoStreamPlayer" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_right = 1920.0
+offset_bottom = 1088.0
 mouse_filter = 2
 stream = ExtResource("11_tjkli")
 

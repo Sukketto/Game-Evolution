@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1mrjyrxcf1lh"
+path="res://.godot/imported/hit sound effect.mp3-8c7881507efac5ea6905a7119982fc24.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/hit sound effect.mp3"
+dest_files=["res://.godot/imported/hit sound effect.mp3-8c7881507efac5ea6905a7119982fc24.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

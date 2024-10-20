@@ -1,7 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://blx1wer0qdq63"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_6w5ip"]
-[ext_resource type="Texture2D" uid="uid://savi8wf0l2pj" path="res://icon.svg" id="2_p10t0"]
 [ext_resource type="Texture2D" uid="uid://ksps7rkett7t" path="res://assets/ui/pong_icon.png" id="2_udo4n"]
 [ext_resource type="Texture2D" uid="uid://diw3bm7ny0ak4" path="res://assets/ui/information_pop_up.png" id="3_6263y"]
 [ext_resource type="Texture2D" uid="uid://dekwact8t18eo" path="res://assets/ui/progress_bar.png" id="3_gtoix"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bh26l4o1or638" path="res://assets/ui/menu_icon.png" id="6_nbc86"]
 [ext_resource type="Texture2D" uid="uid://cvp2gs0uxcp8" path="res://assets/ui/pop_up_icon.png" id="6_vqxng"]
 [ext_resource type="FontFile" uid="uid://vo6yjq41sb8o" path="res://assets/fonts/Minecraft.ttf" id="7_45g0p"]
+[ext_resource type="Texture2D" uid="uid://b82fjugkqh3rn" path="res://assets/ui/space_invaders_controls.png" id="8_m8cu4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hf00"]
 atlas = ExtResource("3_6263y")
@@ -163,8 +163,7 @@ text = "ojnsanosdosdibi hc sdcbisdb s sdbcijsd c sdc ds c dscsb ijsn sdj sdcjdcj
 [node name="Comandi" type="TextureRect" parent="UI/Tutorial/Testi/Istruzioni"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-texture = ExtResource("2_p10t0")
-expand_mode = 1
+texture = ExtResource("8_m8cu4")
 
 [node name="Esci" type="TextureButton" parent="UI"]
 custom_minimum_size = Vector2(128, 128)

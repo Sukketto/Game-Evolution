@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dposml6rp4107"
+path="res://.godot/imported/moneta collezionata.mp3-e35c36c2f7c7216a73dfbf8b930d63a8.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/moneta collezionata.mp3"
+dest_files=["res://.godot/imported/moneta collezionata.mp3-e35c36c2f7c7216a73dfbf8b930d63a8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

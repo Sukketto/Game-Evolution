@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	# Muovi la palla e gestisci le collisioni
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision:
+		if !$AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play() 
 		$"../Livello".avanza(1)
 		# Ottieni la normale della collisione e fai rimbalzare la palla
 		var normal := collision.get_normal()

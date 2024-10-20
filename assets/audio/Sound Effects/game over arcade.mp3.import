@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cveud8fxmawt3"
+path="res://.godot/imported/game over arcade.mp3-92aa2c8cb5f478c2c14ec9eb9f82beb2.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/game over arcade.mp3"
+dest_files=["res://.godot/imported/game over arcade.mp3-92aa2c8cb5f478c2c14ec9eb9f82beb2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

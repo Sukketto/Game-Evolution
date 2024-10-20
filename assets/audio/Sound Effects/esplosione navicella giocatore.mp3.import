@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q5hgplhxn4y5"
+path="res://.godot/imported/esplosione navicella giocatore.mp3-1c41c9eadc6b7dc340aac51a2d7ec264.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Sound Effects/esplosione navicella giocatore.mp3"
+dest_files=["res://.godot/imported/esplosione navicella giocatore.mp3-1c41c9eadc6b7dc340aac51a2d7ec264.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

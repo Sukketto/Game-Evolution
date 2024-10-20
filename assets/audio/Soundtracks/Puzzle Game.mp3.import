@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvwqs1ndfjbp"
+path="res://.godot/imported/Puzzle Game.mp3-e34590e6f8bc22ec662c8e5525531b5b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Soundtracks/Puzzle Game.mp3"
+dest_files=["res://.godot/imported/Puzzle Game.mp3-e34590e6f8bc22ec662c8e5525531b5b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

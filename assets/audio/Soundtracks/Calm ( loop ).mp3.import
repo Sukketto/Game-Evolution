@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbstp7ghw1kfb"
+path="res://.godot/imported/Calm ( loop ).mp3-80d37c0eb5a79289b987e2ea9bc51968.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Soundtracks/Calm ( loop ).mp3"
+dest_files=["res://.godot/imported/Calm ( loop ).mp3-80d37c0eb5a79289b987e2ea9bc51968.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
