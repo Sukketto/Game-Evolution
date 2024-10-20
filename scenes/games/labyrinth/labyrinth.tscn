@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ho8bfdm5ijwg"]
+[gd_scene load_steps=18 format=3 uid="uid://ho8bfdm5ijwg"]
 
 [ext_resource type="Script" path="res://scripts/games/labyrinth/labyrinth.gd" id="1_rqyr8"]
 [ext_resource type="MeshLibrary" uid="uid://b5uvl3ia00jqj" path="res://scenes/games/labyrinth/mesh_library.meshlib" id="2_lcaqu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brqalcvuwwyjd" path="res://assets/ui/labyrinth_icon.png" id="4_nlf4j"]
 [ext_resource type="Texture2D" uid="uid://85qwvu5apj76" path="res://assets/ui/td_icon.png" id="5_sns7c"]
 [ext_resource type="AudioStream" uid="uid://cvwqs1ndfjbp" path="res://assets/audio/Soundtracks/Puzzle Game.mp3" id="6_51ge1"]
+[ext_resource type="Texture2D" uid="uid://du8j2e3nmop6p" path="res://assets/ui/gravity_maze_controls.png" id="6_svja8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wlowh"]
 sky_top_color = Color(0.196078, 0.803922, 1, 1)
@@ -149,8 +150,12 @@ shape = SubResource("SphereShape3D_fxa43")
 livello_corrente = ExtResource("4_nlf4j")
 prossimo_livello_icone = Array[Texture2D]([ExtResource("5_sns7c")])
 categoria = "Puzzle"
-titolo = "Labyrinth"
-descrizione = "Completare il labirinto"
+titolo = "Gravity Maze"
+descrizione = "Lo scopo del gioco è raggiungere la fine del labirinto!
+
+Pronto per iniziare?
+Clicca il tutorial per nasconderlo, clicca la i rossa per rimostrarlo"
+comandi = ExtResource("6_svja8")
 show_tutoria = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

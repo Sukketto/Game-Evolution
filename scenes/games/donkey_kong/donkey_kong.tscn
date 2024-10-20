@@ -824,9 +824,13 @@ shape = SubResource("RectangleShape2D_4e5hh")
 prossimo_livello = ExtResource("17_0op1e")
 livello_corrente = ExtResource("18_2lrbj")
 prossimo_livello_icone = Array[Texture2D]([ExtResource("19_3y6ag")])
-categoria = "Platform"
+categoria = "Platform Game"
 titolo = "Donkey Kong"
-descrizione = "Il tuo obiettivo è prendere il teletrasporto, difeso dall’alieno in cima alle piattaforme."
+descrizione = "Lo scopo del gioco è raggiungere il teletrasporto in cima alle piattaforme,
+ma attenzione: l’alieno non è molto felice della tua presenza.
+
+Pronto per iniziare?
+Clicca il tutorial per nasconderlo, clicca la i rossa per rimostrarlo"
 comandi = ExtResource("23_sfvrq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

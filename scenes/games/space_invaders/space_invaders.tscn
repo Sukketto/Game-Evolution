@@ -92,9 +92,13 @@ position = Vector2(1838, 940)
 prossimo_livello = ExtResource("8_tkedu")
 livello_corrente = ExtResource("7_fhghu")
 prossimo_livello_icone = Array[Texture]([ExtResource("8_xptvr")])
-categoria = "Arcade"
+categoria = "Arcade Game"
 titolo = "Space Invaders"
-descrizione = "Elimina tutte le ondate di alieni prima che raggiungano la parte inferiore dello schermo."
+descrizione = "Lo scopo del gioco è eliminare le ondate di alieni prima che
+ti raggiungano.
+
+Pronto per iniziare?
+Clicca il tutorial per nasconderlo, clicca la i rossa per rimostrarlo"
 comandi = ExtResource("13_qjwwu")
 
 [node name="UI" type="Control" parent="."]

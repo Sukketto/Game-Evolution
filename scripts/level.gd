@@ -39,7 +39,7 @@ class_name Livello extends Node
 @export var prossimo_livello_icone: Array[Texture2D] = [load("res://missing.png")]
 @export var categoria: String
 @export var titolo: String
-@export var descrizione: String
+@export_multiline var descrizione: String
 @export var comandi: Texture2D
 @export var show_tutoria: bool = true
 
@@ -137,7 +137,7 @@ func conferma_torna_al_menu() -> void:
 func on_tutorial_clicked(event : InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var mouse_event = event as InputEventMouseButton
-		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
+		if Input.is_anything_pressed():
 			# Emette il segnale tutorial_clicked
 			emit_signal("tutorial_clicked", get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y)
 			# Default: nasconde il tutorial

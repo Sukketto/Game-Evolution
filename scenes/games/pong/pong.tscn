@@ -119,9 +119,14 @@ shape = SubResource("RectangleShape2D_uj5yo")
 prossimo_livello = ExtResource("7_3ag2u")
 livello_corrente = ExtResource("9_b7alb")
 prossimo_livello_icone = Array[Texture]([ExtResource("9_yjqy7")])
-categoria = "Casual"
+categoria = "Casual Game"
 titolo = "Pong"
-descrizione = "Lo scopo del gioco è segnare più punti del tuo avversario colpendo la palla oltre la sua racchetta."
+descrizione = "Lo scopo del gioco è segnare più punti del tuo
+avversario colpendo la palla oltre la sua racchetta.
+
+Pronto per iniziare? 
+Clicca il tutorial per nasconderlo, clicca la i rossa per rimostrarlo
+"
 comandi = ExtResource("13_0d0d0")
 
 [node name="UI" type="Control" parent="."]
