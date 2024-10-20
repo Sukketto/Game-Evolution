@@ -44,6 +44,7 @@ class_name Livello extends Node
 # Elementi grafici
 @onready var tutorial_ui: Control = $UI/Tutorial
 @onready var livello_corrente_ui: Control = $"UI/Livello/Livello Corrente"
+@onready var info_texture: TextureRect = $"UI/Livello/Livello Corrente/InfoTexture"
 @onready var livello_successivo_ui: Control = $"UI/Livello/Livello Successivo"
 @onready var categoria_label: Label = $UI/Tutorial/Testi/Categoria
 @onready var titolo_label: Label = $UI/Tutorial/Testi/Titolo
@@ -152,6 +153,11 @@ func on_prossimo_livello_icona_pressed(event : InputEvent) -> void:
 			# Default: aumenta l'avanzamento di 10
 			avanza(10)
 
+var offset = true
+func flash_info():
+	offset = !offset
+	info_texture.texture.region = Rect2(32 if offset else 0, 0, 32, 32)
+
 # Segnali
 signal tutorial_clicked(x: int, y: int)
 signal tutorial_closed()
@@ -160,3 +166,7 @@ signal icona_pressed()
 signal prossimo_livello_icona_pressed()
 signal tutorial_icona_pressed()
 signal avanzamento_finito()
+
+
+func _on_info_flash_timer_timeout() -> void:
+	flash_info()

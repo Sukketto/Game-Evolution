@@ -88,6 +88,9 @@ layout_mode = 2
 texture_normal = ExtResource("4_6tck1")
 stretch_mode = 5
 
+[node name="InfoFlashTimer" type="Timer" parent="UI/Livello"]
+autostart = true
+
 [node name="Tutorial" type="TextureRect" parent="UI"]
 visible = false
 layout_mode = 1
@@ -173,3 +176,5 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_y4kwd")
 texture_hover = SubResource("AtlasTexture_o8mam")
 stretch_mode = 5
+
+[connection signal="timeout" from="UI/Livello/InfoFlashTimer" to="." method="_on_info_flash_timer_timeout"]

@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 			$Sprite2D.texture = load("res://assets/games/space_invaders/shield_lessbroken_si.asesprite.png")
 	
 	if state <= 0:
+		$"../Livello".avanza(10)
 		queue_free()
