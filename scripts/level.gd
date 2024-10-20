@@ -152,10 +152,14 @@ func on_icona_pressed(event : InputEvent) -> void:
 			# Default: mostra il tutorial
 			show_tutorial()
 
+var clicks = 0
 func on_prossimo_livello_icona_pressed(event : InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var mouse_event = event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
+			clicks += 1
+			if clicks == 9:
+				get_tree().change_scene_to_file("res://scenes/cookie_game.tscn")
 			# Emette il segnale prossimo_livello_icona_pressed
 			emit_signal("prossimo_livello_icona_pressed")
 			# Default: aumenta l'avanzamento di 10

@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://cd3g5v0504amr"]
+
+[ext_resource type="Script" path="res://scripts/cookie/game.gd" id="1_meir7"]
+[ext_resource type="Texture2D" uid="uid://bgkwjx5ckw2ku" path="res://assets/backgrounds/crafting_menu_cookie.png" id="2_cv7kg"]
+[ext_resource type="Texture2D" uid="uid://ck3ga2eui22ai" path="res://assets/backgrounds/background.jpg" id="3_56485"]
+[ext_resource type="Script" path="res://scripts/cookie/camera.gd" id="4_xvsmk"]
+[ext_resource type="VideoStream" path="res://assets/transitions/cookie_1.ogv" id="5_3s3o6"]
+[ext_resource type="PackedScene" uid="uid://blx1wer0qdq63" path="res://scenes/level.tscn" id="5_muduf"]
+[ext_resource type="Texture2D" uid="uid://c6ahxtgqy55f7" path="res://assets/ui/cookie_icon.png" id="6_1uhwy"]
+[ext_resource type="AudioStream" uid="uid://bjfprblb7y83i" path="res://assets/audio/Sound Effects/break.ogg" id="6_k5bsy"]
+[ext_resource type="Texture2D" uid="uid://be8a75pd4bbbc" path="res://assets/ui/question_mark_icon.png" id="7_02dlc"]
+[ext_resource type="Texture2D" uid="uid://btlqbxhfau8at" path="res://assets/ui/cookie_game_controls.png" id="8_t3dt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4kph"]
+size = Vector2(64, 64)
+
+[node name="CookieGame" type="Node2D"]
+script = ExtResource("1_meir7")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(957, 540)
+texture = ExtResource("3_56485")
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Money" type="Label" parent="UI"]
+offset_left = 1603.0
+offset_top = 44.0
+offset_right = 1734.0
+offset_bottom = 67.0
+text = "$1"
+
+[node name="CraftingSlot" type="TextureRect" parent="UI"]
+offset_left = 228.0
+offset_top = 20.0
+offset_right = 292.0
+offset_bottom = 84.0
+texture = ExtResource("2_cv7kg")
+expand_mode = 3
+
+[node name="Packages" type="HBoxContainer" parent="UI"]
+custom_minimum_size = Vector2(0, 64)
+offset_left = 500.0
+offset_top = 20.0
+offset_right = 1218.0
+offset_bottom = 84.0
+
+[node name="Description" type="Label" parent="UI"]
+visible = false
+offset_left = 8.0
+offset_top = 1049.0
+offset_right = 1758.0
+offset_bottom = 1072.0
+text = "Drop"
+
+[node name="Cost" type="Label" parent="UI"]
+visible = false
+offset_left = 1772.0
+offset_top = 1049.0
+offset_right = 1903.0
+offset_bottom = 1072.0
+text = "Valore: $1"
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+script = ExtResource("4_xvsmk")
+
+[node name="CraftingArea1" type="Area2D" parent="Camera"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/CraftingArea1"]
+position = Vector2(-700, -488)
+shape = SubResource("RectangleShape2D_q4kph")
+
+[node name="CraftingArea2" type="Area2D" parent="Camera"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/CraftingArea2"]
+position = Vector2(-572, -488)
+shape = SubResource("RectangleShape2D_q4kph")
+
+[node name="Livello" parent="." instance=ExtResource("5_muduf")]
+livello_corrente = ExtResource("6_1uhwy")
+prossimo_livello_icone = Array[Texture2D]([ExtResource("7_02dlc")])
+categoria = "Coockie Clicking"
+titolo = "Merge Evolve Drop"
+descrizione = "Lo scopo del gioco è massimizzare i profitti.
+Fai evolvere i produttori e crea una fabbricazione di oggetti di massa!
+Utilizza oggetti per fabbbricarne di nuovi, in grado di potenziare gli altri 
+produttori sul terreno.
+Pronto per iniziare?
+Clicca il tutorial per nasconderlo, clicca la i rossa per rimostrarlo"
+comandi = ExtResource("8_t3dt3")
+show_tutoria = false
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stream = ExtResource("5_3s3o6")
+autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_k5bsy")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

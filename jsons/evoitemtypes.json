@@ -1,0 +1,101 @@
+[
+    {
+        "id": "re",
+        "fa-name": "crown",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "castello",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "mago",
+        "fa-name": "staff",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "pozioni",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "esploratore",
+        "fa-name": "map",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "bussola",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "bandito",
+        "fa-name": "sword",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "borsa",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "angelo custode",
+        "fa-name": "angel",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "aiuto",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "uomo",
+        "fa-name": "person",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "figlio",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "giocherellone",
+        "fa-name": "face-grin-tongue-wink",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "risata",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "amante",
+        "fa-name": "heart",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "infattuazione",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "eroe",
+        "fa-name": "swords",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "scudo",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "artista",
+        "fa-name": "paintbrush",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "arte",
+        "drop_rate": 15,
+        "drop_count": 1
+    },
+    {
+        "id": "innocente",
+        "fa-name": "face-smile-halo",
+        "cost": 8,
+        "categories": ["Archetipo"],
+        "drop_id": "felicità",
+        "drop_rate": 15,
+        "drop_count": 1
+    }
+]

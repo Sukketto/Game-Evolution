@@ -1,0 +1,106 @@
+[
+    {
+        "id": "aiuto",
+        "cost": 14,
+        "fa-name": "handshake-angle",
+        "categories": [],
+        "effects": [
+            {
+                "categories": ["Archetipi"],
+                "description": "Aiuta gli archetipi a produrre il 10% più velocemente",
+                "radius": 70,
+                "operation": "*=",
+                "type": "drop_amount",
+                "value": "1.1"
+            }
+        ]
+    },
+    {
+        "id": "scudo",
+        "cost": 14,
+        "fa-name": "shield",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "pozione",
+        "cost": 14,
+        "fa-name": "flask",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "borsa",
+        "cost": 14,
+        "fa-name": "bag-shopping",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "arte",
+        "cost": 14,
+        "fa-name": "palette",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "sapere",
+        "cost": 14,
+        "fa-name": "head-side-gear",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "bussola",
+        "cost": 14,
+        "fa-name": "compass",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "risata",
+        "cost": 14,
+        "fa-name": "face-grin-tears",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "infattuazione",
+        "cost": 14,
+        "fa-name": "face-grin-hearts",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "figlio",
+        "cost": 14,
+        "fa-name": "child",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "felicità",
+        "cost": 14,
+        "fa-name": "face-smile",
+        "categories": [],
+        "effects": [
+        ]
+    },
+    {
+        "id": "castello",
+        "cost": 14,
+        "fa-name": "castle",
+        "categories": [],
+        "effects": [
+        ]
+    }
+]

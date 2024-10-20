@@ -1,0 +1,55 @@
+[
+    {
+        "id": "archetipi",
+        "description": "Gli originali 12 archetipi",
+        "cost": 50,
+        "count": 1,
+        "items": [
+                {
+                    "id": "re",
+                    "weight": 1
+                },
+                {
+                    "id": "mago",
+                    "weight": 1
+                },
+                {
+                    "id": "esploratore",
+                    "weight": 1
+                },
+                {
+                    "id": "bandito",
+                    "weight": 1
+                },
+                {
+                    "id": "angelo custode",
+                    "weight": 1
+                },
+                {
+                    "id": "uomo",
+                    "weight": 1
+                },
+                {
+                    "id": "giocherellone",
+                    "weight": 1
+                },
+                {
+                    "id": "amante",
+                    "weight": 1
+                },
+                {
+                    "id": "eroe",
+                    "weight": 1
+                },
+                {
+                    "id": "artista",
+                    "weight": 1
+                },
+                {
+                    "id": "innocente",
+                    "weight": 1
+                }
+            
+        ] 
+    }
+]
