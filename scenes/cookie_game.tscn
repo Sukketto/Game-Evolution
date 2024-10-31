@@ -25,6 +25,20 @@ texture = ExtResource("3_56485")
 [node name="UI" type="CanvasLayer" parent="."]
 visible = false
 
+[node name="Livello" parent="UI" instance=ExtResource("5_muduf")]
+livello_corrente = ExtResource("6_1uhwy")
+prossimo_livello_icone = Array[Texture2D]([ExtResource("7_02dlc")])
+categoria = "Coockie Clicking"
+titolo = "Merge Evolve Drop"
+descrizione = "Lo scopo del gioco è massimizzare i profitti.
+Fai evolvere i produttori e crea una fabbricazione di oggetti di massa!
+Utilizza oggetti per fabbbricarne di nuovi, in grado di potenziare gli altri 
+produttori sul terreno.
+Pronto per iniziare?
+Clicca il tutorial per nasconderlo, clicca la i rossa per rimostrarlo"
+comandi = ExtResource("8_t3dt3")
+show_tutoria = false
+
 [node name="Money" type="Label" parent="UI"]
 offset_left = 1603.0
 offset_top = 44.0
@@ -80,20 +94,6 @@ shape = SubResource("RectangleShape2D_q4kph")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/CraftingArea2"]
 position = Vector2(-572, -488)
 shape = SubResource("RectangleShape2D_q4kph")
-
-[node name="Livello" parent="." instance=ExtResource("5_muduf")]
-livello_corrente = ExtResource("6_1uhwy")
-prossimo_livello_icone = Array[Texture2D]([ExtResource("7_02dlc")])
-categoria = "Coockie Clicking"
-titolo = "Merge Evolve Drop"
-descrizione = "Lo scopo del gioco è massimizzare i profitti.
-Fai evolvere i produttori e crea una fabbricazione di oggetti di massa!
-Utilizza oggetti per fabbbricarne di nuovi, in grado di potenziare gli altri 
-produttori sul terreno.
-Pronto per iniziare?
-Clicca il tutorial per nasconderlo, clicca la i rossa per rimostrarlo"
-comandi = ExtResource("8_t3dt3")
-show_tutoria = false
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 40.0

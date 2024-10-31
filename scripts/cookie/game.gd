@@ -102,4 +102,4 @@ func _unhandled_input(event):
 
 func _on_video_stream_player_finished() -> void:
 	$UI.visible = true
-	$Livello.show_tutorial()
+	$UI/Livello.show_tutorial()
